@@ -79,7 +79,7 @@ class TaskController extends Controller
             'completed' => 'required|boolean'
         ]);
         $task->update($data);
-        return response($task, 201);
+        return response('Update task', 201);
     }
     public function updateAll(Request $request){
         $data = $request->validate([
