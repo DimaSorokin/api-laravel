@@ -74,10 +74,9 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        dd($request);
         $data = $request->validate([
             'title' => 'required|string',
-            'completed' => 'required|boolean',
+//            'completed' => 'required|boolean',
         ]);
         $task->update($data);
         return response($task, 200);
