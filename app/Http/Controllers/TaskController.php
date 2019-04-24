@@ -72,10 +72,11 @@ class TaskController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Task $task)
+    public function update(Request $request, $id)
     {
         $data = $request->validate([
             'title' => 'required|string',
+            'completed' => 'required|boolean',
         ]);
         $task->update($data);
         return response('Update task', 201);
